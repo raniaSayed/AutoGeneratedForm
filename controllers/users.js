@@ -1,36 +1,32 @@
-var express  = require("express");
-var router = express.Router();
-var fs = require("fs");
-var path = require('path');
-var mongoose = require("mongoose");
+var express = require('express')
+var router = express.Router()
+var fs = require('fs')
+var path = require('path')
+var mongoose = require('mongoose')
+var userModel = mongoose.model('users')
+var data = fs.readFileSync('file.json')
 
-// var data = fs.readFileSync("file.json");
-//console.log(JSON.parse(data));
-// var fileds = "";
-// var mongooseFields ="";
-// var html="";
-// var mongooseData ="";
-var mongoose = require("mongoose");
-var userModel = mongoose.model("users");
+router.get('/add', (req, res) => {
+  var userData = []
+  JSON.parse(data).forEach(element => {
 
-router.get("/add",(req,res)=>{
+    userData.push(element)
+  })
+  res.locals.userData = userData
 
-  res.render("form");
+  res.render('users')
+})
 
-});
-
-router.post("/add",function(req,res){
-    //add user to mongoose
-    var userBody = req.body;
-    console.log(userBody);
-
-     var user =new userModel(userBody);
-    user.save((error,data)=>{
-        if(!error)
-            res.redirect("form");
-        else
-            res.json(error);
-    });
-    //redirect to form
-});
-module.exports = router;
+router.post('/add', function (req, res) {
+  // add user to mongoose
+  var user = new userModel(req.body)
+  user.save((error, data) => {
+    if (!error)
+      // redirect to form route
+      res.redirect('/add')
+    else
+      // render error view
+      res.render('error')
+  })
+})
+module.exports = router
