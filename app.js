@@ -15,33 +15,12 @@ app.set('views', './views')
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(bodyParser.urlencoded())
 
-// read data structure file
 
-JSON.parse(data).forEach(element => {
-  mongooseFields += element.name + ':{type:' + element.type + '},\n'
-})
-
-// write mongoose
-
-mongooseData = `var mongoose = require('mongoose')
-var Schema = mongoose.Schema
-var users = new Schema({` + mongooseFields + `})
-
-//Model Register
-mongoose.model("users",users)
-`
-
-fs.writeFileSync('./models/users.js', mongooseData)
-// require all models
-fs.readdirSync('./models').forEach(filename => {
-  require('./models/' + filename)
-  console.log(filename)
-})
-mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost:27017/blog4')
 
 usersRouter = require('./controllers/users')
 app.use('/', usersRouter)
 
+mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost:27017/blog4')
 // start listenning
-app.listen(9090)
+app.listen(9090,() =>{console.log("Starting...")})
