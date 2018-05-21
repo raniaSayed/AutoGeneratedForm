@@ -25,8 +25,8 @@ router.post('/add', function (req, res) {
       // redirect to form route
       res.redirect('/add')
     else
-      // render error view
-      res.render('error')
+      // render error message
+      res.json(error)
   })
 })
 module.exports = router

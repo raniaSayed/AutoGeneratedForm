@@ -21,7 +21,7 @@
         "name": "email",
         "type": "String",
         "html":{
-            "type": "text",
+            "type": "email",
             "placeholder": "Email Address",
             "class": "form-control"
         }
@@ -30,7 +30,7 @@
         "name": "age",
         "type": "Number",
         "html":{
-            "type": "text",
+            "type": "number",
             "placeholder": "Age",
             "class": "form-control"
         }
