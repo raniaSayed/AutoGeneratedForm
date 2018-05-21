@@ -45,6 +45,9 @@ router.get('/add', (req, res) => {
 router.post('/add', function (req, res) {
   // add user to mongoose
   userModel = mongoose.model('users')
+  //loop and validate emails, numbers
+  //console.log(req.body)
+
   var user = new userModel(req.body)
   user.save((error, data) => {
     if (!error)
