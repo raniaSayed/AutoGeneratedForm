@@ -1,0 +1,38 @@
+[
+    {
+        "name": "username",
+        "type": "String",
+        "html":{
+            "type": "text",
+            "placeholder": "Username",
+            "class": "form-control"
+        }
+    },
+    {
+        "name": "password",
+        "type": "String",
+        "html":{
+            "type": "password",
+            "placeholder": "Password",
+            "class": "form-control"
+        }
+    },
+    {
+        "name": "email",
+        "type": "String",
+        "html":{
+            "type": "text",
+            "placeholder": "Email Address",
+            "class": "form-control"
+        }
+    },
+    {
+        "name": "age",
+        "type": "Number",
+        "html":{
+            "type": "text",
+            "placeholder": "Age",
+            "class": "form-control"
+        }
+    }
+]
