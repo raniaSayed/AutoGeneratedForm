@@ -7,12 +7,12 @@ var mongooseFields = ''
 var mongooseData = ''
 var mongoose
 var userModel 
-var data = fs.readFileSync('file.json')
+var data
 
-fs.watchFile('file.json', (curr, prev) => {
-  console.log(`the current mtime is: ${curr.mtime}`);
-  console.log(`the previous mtime was: ${prev.mtime}`);
 
+fs.watchFile('file.json', () => {
+
+  data = fs.readFileSync('file.json')
 
   //mongoose file generation
   mongooseFields ="";
@@ -40,6 +40,7 @@ router.get('/add', (req, res) => {
    
    //template generation
    var userData = []
+   data = fs.readFileSync('file.json')
    JSON.parse(data).forEach(element => {
  
      userData.push(element)
@@ -53,6 +54,8 @@ router.get('/add', (req, res) => {
 router.post('/add', function (req, res) {
   // add user to mongoose
   userModel = mongoose.model('users')
+  //loop and validate emails, numbers
+  //console.log(req.body)
 
   var user = new userModel(req.body)
   user.save((error, data) => {

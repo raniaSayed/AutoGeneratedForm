@@ -36,11 +36,11 @@
         }
     },
     {
-        "name": "cards_number",
+        "name": "kar",
         "type": "Number",
         "html":{
             "type": "number",
-            "placeholder": "number of cccc",
+            "placeholder": "kar of cccc",
             "class": "form-control"
         }
     }

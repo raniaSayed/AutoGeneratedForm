@@ -4,7 +4,7 @@ var mongoose = require('mongoose')
 password:{type:String},
 email:{type:String},
 age:{type:Number},
-cardS_number:{type:Number},
+kar:{type:Number},
 })
 
   //Model Register
