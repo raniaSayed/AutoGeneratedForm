@@ -34,5 +34,15 @@
             "placeholder": "Age",
             "class": "form-control"
         }
+    },
+    {
+        "name": "cards_number",
+        "type": "Number",
+        "html":{
+            "type": "number",
+            "placeholder": "number of cccc",
+            "class": "form-control"
+        }
     }
+    
 ]

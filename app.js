@@ -15,8 +15,6 @@ app.set('views', './views')
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(bodyParser.urlencoded())
 
-
-
 usersRouter = require('./controllers/users')
 app.use('/', usersRouter)
 
