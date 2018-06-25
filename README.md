@@ -1,8 +1,9 @@
 <h2>Describtion</h2>
-This is an application that listen to schema file and auto generate mongoose schema and ejs template
+This is simple application that listen to schema file and auto generate mongoose schema and ejs template
 
 <h2>Prerequisites (Used Technologies) </h2>
 Node.js v8.10.0 or above
+
 
 mongoDB database engine v3.6.3
 
