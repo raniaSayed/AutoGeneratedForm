@@ -10,9 +10,9 @@ var userModel
 var data
 
 
-fs.watchFile('file.json', () => {
+fs.watchFile('schema.json', () => {
 
-  data = fs.readFileSync('file.json')
+  data = fs.readFileSync('schema.json')
 
   //mongoose file generation
   mongooseFields ="";
@@ -40,7 +40,7 @@ router.get('/add', (req, res) => {
    
    //template generation
    var userData = []
-   data = fs.readFileSync('file.json')
+   data = fs.readFileSync('schema.json')
    JSON.parse(data).forEach(element => {
  
      userData.push(element)
