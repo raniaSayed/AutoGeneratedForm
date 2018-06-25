@@ -1,5 +1,10 @@
-<h2>Describtion</h2>
+<h2>Auto Generate App</h2>
 This is simple application that listen to schema file and auto generate mongoose schema and ejs template
+
+
+<h2>Getting Started</h2>
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
 
 <h2>Prerequisites (Used Technologies) </h2>
 Node.js v8.10.0 or above
